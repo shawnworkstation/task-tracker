@@ -43,7 +43,7 @@ def test_is_overdue_true() -> None:
     assert task.is_overdue() is True
 
 
-def test_is_overdue_false() -> None:
+def test_is_overdue_false_Done() -> None:
     """Verifies task is not overdue when status is  Done"""
     now = datetime.now()
     task = Task(
@@ -52,5 +52,17 @@ def test_is_overdue_false() -> None:
             status = TaskStatus.DONE,
             created_at = now - timedelta(days=10),
             due_date= now - timedelta(days=1)       
+        )
+    assert task.is_overdue() is False
+
+def test_is_overdue_false() -> None:
+    """Verifies task is not overdue when due_date is in the future and status is not Done"""
+    now = datetime.now()
+    task = Task(
+            id = 3,
+            title = "task 3",
+            status = TaskStatus.TODO,
+            created_at = now - timedelta(days=10),
+            due_date= now + timedelta(days=1)       
         )
     assert task.is_overdue() is False

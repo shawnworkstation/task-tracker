@@ -8,7 +8,6 @@ class TaskStatus(Enum):
     IN_PROGRESS = "IN_PROGRESS"
     DONE = "DONE"
 
-#Create the Dataclass shell and attributes
 @dataclass 
 class Task:
     id: int
