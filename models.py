@@ -4,9 +4,9 @@ from datetime import datetime
 
 # Define the Enum for task status
 class TaskStatus(Enum):
-   TODO = "TODO"
-   IN_PROGRESS = "IN_PROGRESS"
-   DONE = "DONE"
+    TODO = "TODO"
+    IN_PROGRESS = "IN_PROGRESS"
+    DONE = "DONE"
 
 #Create the Dataclass shell and attributes
 @dataclass 
