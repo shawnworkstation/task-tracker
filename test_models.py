@@ -23,7 +23,7 @@ def test_mark_done_true() -> None:
         id = 2,
         title = "task 2",
         status = TaskStatus.TODO,
-        created_at = datetime.now,
+        created_at = datetime.now(),
         due_date=None        
     )
     result = task.mark_done()
